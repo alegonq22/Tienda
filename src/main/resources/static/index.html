@@ -1,67 +1,31 @@
 <!DOCTYPE html>
-<!-- COMENTARIO -->
+<!-- Menú-->
 <html>
     <head>
-        <title>NUESTRO INDEX</title>
 
+        <link rel="stylesheet" href="css/menu.css" type="text/css">
+
+        <title>Menú</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+
     <body>
-
-        <!-- (div = division -->
-        <div>
-            <!-- Lista ordenada -->     
-            <ol>
-                <li>Progra 1 </li>
-                <li>Progra 2 </li>
-                <li>Progra 3 </li>
-                <li>Progra 4 </li>
-
-            </ol>
-
-            <!-- Lista desordenada -->
-            <ul>
-                <li>Progra 1 </li>
-                <li>Progra 2 </li>
-                <li>Progra 3 </li>
-                <li>Progra 4 </li>
-
-            </ul>  
-
-        </div>
-
-        <div>
+        <header class="header"> <!-- Encabezado-->
             
-             <a href="home.html">Home</a>
-            <!-- (p)= Parrafo --> 
-            <!-- br= break, no tiene etiqueta de cierre,es como un enter -->
-
-            <p>Este curso es super genial,<br> me gusta mucho el curso</p>
-
-            <!-- Heading/Cabeza o titulo -->
-            <h1> Hola  </h1>
-            <h2> Hola  </h2>
-            <h3> Hola  </h3>
-            <h4> Hola  </h4>
-            <h5> Hola  </h5>
-            <h6> Hola  </h6>
-
-            <p>Esta es la primera pagina del curso Web y Patrones... <br>Neymar Jr</p>
-
-
-
-
-        </div>
-
-        <!-- img tiene 2 atributos requeridos, src y alt -->
-        <!-- src = ruta de la imagen, alt = si no logra cargar la imagen muestra texto -->
-
-        <img src="images/Njr.jpg">
-
-
-        <!-- (a) Etiqueta de hipervinculo a otro link o referencia HTMl -->
-        
-        
-        <!-- VIDEOS-->
- <iframe src="https://www.youtube.com/embed/hMhR6T7EEfQ" width="500" height="400"> </iframe>
+            <nav class="nav">
+                
+                <a href="home.html" class="logo nav-link">Inicio</a>
+                
+                <ul class="nav-menu">
+                    
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo1.html">&LeftTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo2.html">&RightTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="login.html">Login</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="iframes.html">Iframe</a></li>
+                </ul>
+            </nav>
+        </header>
     </body>
 </html>
