@@ -1,45 +1,51 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>Formulario</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="plantilla/template::head"></head>
     <body>
-        <header th:replace= "layout/crear :: header "/>
-        <h2>Datos de la persona</h2>
-        <a href="@{/}">Regresar</a>
-        <br>
+        <header th:replace="plantilla/template::header"></header>
+
+        <! ------------------------Esto es formulario--------------------!>
+        <h1>Datos Personas</h1>
+        <a th:href="@{/}">Regresar</a>
+        <br><!-- comment -->
         <form th:action="@{/guardarPersona}"
               method="post"
               th:object="${persona}">
-            <input type="hidden" name="idPersona" th:field="*{idPersona}"/>
-            <label for="nombre">Nombre:</label>
-            <input type="text"th:field="*{nombre}"/>
-            <br>
-            <label for="apellido 1">Apellido 1:</label>
-            <input type="text"th:field="*{apellido 1}"/>
-            <br>
-            <label for="apellido 2">Apellido 2:</label>
-            <input type="text"th:field="*{apellido 2}"/>
-            <br>
-            <label for="correo">Correo:</label>
-            <input type="text"th:field="*{correo}"/>
-            <br>
-            <label for="telefono">Telefono:</label>
-            <input type="text"th:field="*{telefono}"/>
-            <br>
-            <label for="pais">Pais:</label>
-            <input type="text"th:field="*{Pais}"/>
-            <br>
-            <button type="text"th:field="*{Pais}"/>
-            <br>
-            <button type="submit"class="btn btn-primary"value="Guardar">Submit<button/>
+            <label for="nombre">Nombre;</label>
+            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <br><!-- comment -->
+            <label for="apellido1">apellido1;</label>
+            <input type="text" name="apellidos1" th:field="*{apellido1}"/>
+            <br><!-- comment -->
+            <label for="apellido2">apellido2;</label>
+            <input type="text" name="apellidos2" th:field="*{apellido2}"/>
+            <br><!-- comment -->
+            <label for="email">email;</label>
+            <input type="email" name="email" th:field="*{email}"/>
+            <br><!-- comment -->
+            <label for="telefono">Telefono;</label>
+            <input type="tel" name="telefono" th:field="*{telefono}"/>
+            <br><!-- comment -->
+            <label for="id">id;</label>
+            <input type="hidden" name="id" th:field="*{id}"/> 
+            <br><!-- comment -->
+            <label for="pais">pais;</label>
+
+            <select th:field="*{pais}">
+                <option th:each="x:${paises}"
+                        th:value="${x.id}"
+                        th:text="${x.pais}"/>
+            </select>
+
+            <br><!-- comment -->
+            <input type="submit" name="guardar" value="Guardar"/>
         </form>
-        <footer th:replace="layout/crear :: footer"/>
-    </body>
+
+    </div>
+    <footer th:replace="plantilla/template::footer">
+        
+    </footer>
+</body>
 </html>

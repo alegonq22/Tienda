@@ -9,10 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-/**
- *
- * @author XPC
- */
+
 @Entity
 @Table(name = "personas")
 public class Persona implements Serializable {
@@ -20,13 +17,15 @@ public class Persona implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-
     private String nombre;
     private String apellido1;
     private String apellido2;
     private String telefono;
     private String email;
+    
+    @ManyToOne
+    @JoinColumn(name = "paises_id")
+    private Pais pais;
 
     public long getId() {
         return id;
@@ -82,9 +81,4 @@ public class Persona implements Serializable {
     public void setPais(Pais pais) {
         this.pais = pais;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "paises_id")
-    private Pais pais;
-
 }

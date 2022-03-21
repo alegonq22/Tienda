@@ -7,10 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author XPC
- */
+
 @Entity
 @Table(name = "paises")
 public class Pais implements Serializable {
@@ -19,6 +16,7 @@ public class Pais implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String pais;
+
 
     public long getId() {
         return id;
