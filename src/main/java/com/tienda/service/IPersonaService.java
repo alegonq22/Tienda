@@ -2,6 +2,9 @@ package com.tienda.service;
 
 import com.tienda.entity.Persona;
 import java.util.List;
+import org.springframework.stereotype.Repository;
+
+@Repository
 
 public interface IPersonaService {
 

@@ -10,8 +10,8 @@
         <h1>Datos Personas</h1>
         <a th:href="@{/}">Regresar</a>
         <br><!-- comment -->
-        <form th:action="@{/guardarPersona}"
-              method="post"
+        <form th:action="@{/save}"
+              method="POST"
               th:object="${persona}">
             <label for="nombre">Nombre;</label>
             <input type="text" name="nombre" th:field="*{nombre}"/>
@@ -28,24 +28,17 @@
             <label for="telefono">Telefono;</label>
             <input type="tel" name="telefono" th:field="*{telefono}"/>
             <br><!-- comment -->
-            <label for="id">id;</label>
-            <input type="hidden" name="id" th:field="*{id}"/> 
-            <br><!-- comment -->
             <label for="pais">pais;</label>
-
-            <select th:field="*{pais}">
-                <option th:each="x:${paises}"
-                        th:value="${x.id}"
-                        th:text="${x.pais}"/>
-            </select>
-
+            <input type="pai" name="Pais" th:field="*{id}"/>
             <br><!-- comment -->
+
+
             <input type="submit" name="guardar" value="Guardar"/>
         </form>
 
     </div>
     <footer th:replace="plantilla/template::footer">
-        
+
     </footer>
 </body>
 </html>

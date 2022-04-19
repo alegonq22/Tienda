@@ -14,24 +14,27 @@ public class PersonaService implements IPersonaService {
     private PersonaRepository personaRepository;
 
     @Override
+    
     public List<Persona> getAllPerson() {
         return (List<Persona>) personaRepository.findAll();
 
     }
 
     @Override
+    
     public void savePerson(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    personaRepository.save(persona);
     }
 
     @Override
+    
     public Persona getPersonById(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       return personaRepository.findById(id).orElse(null);
     }
 
     @Override
     public void delete(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+           personaRepository.deleteById(id);
     }
 
     @Override
